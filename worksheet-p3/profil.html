@@ -45,62 +45,81 @@
   <main>
     <section id="Daftar-Aktivitas-Harian">
       <h2>Daftar Aktivitas Harian</h2>
+    <table>
+    <caption>Daftar Aktivitas Hari Ini</caption>
+    <thead>
+        <tr>
+        <th scope="col">Nama Aktifitas</th>
+        <th scope="col">Waktu</th>
+        <th scope="col">Tenggat</th>
+        <th scope="col">Prioritas</th>
+        <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th scope="row">Kelas Pertama</th>
+        <td>08:00 - 10:00</td>
+        <td>2026-10-15</td>
+        <td>Tinggi</td>
+        <td>Belum selesai</td>
+        </tr>
+        <tr>
+        <th scope="row">Kelas Kedua</th>
+        <td>10:30 - 12:30</td>
+        <td>2026-10-15</td>
+        <td>Sedang</td>
+        <td>Belum selesai</td>
+        </tr>
+        <tr>
+        <th scope="row">Kelas Ketiga</th>
+        <td>13:00 - 15:00</td>
+        <td>2026-10-15</td>
+        <td>Rendah</td>
+        <td>Belum selesai</td>
+        </tr>
+        <tr>
+        <th scope="row">Kerja Kelompok</th>
+        <td>15:30 - 18:00</td>
+        <td>2026-10-17</td>
+        <td>Rendah</td>
+        <td>Belum selesai</td>
+        </tr>
+        <!-- tambahkan minimal dua baris lagi -->
+    </tbody>
+    </table>
 
       <!-- tabel Anda nanti di sini (Lembar D) -->
     </section>
- 
-    <section id="Tambah-Aktivitas">
-      <h2>Tambah Aktivitas</h2>
-      <!-- form Anda nanti di sini (Lembar E) -->
-    </section>
+    <section id="Tambah-Aktivitas-Baru">
+        <h2>Tambah Aktivitas Baru</h2>
+
+        <form action="/simpan" method="post"></form>
+            <p>
+            <label for="Nama-Aktivitas">Nama Aktivitas</label>
+            <input type="text" id="Nama-Aktivitas" name="Nama-Aktivitas" required>
+            </p>
+            <!-- tambahkan minimal dua baris lagi -->
+            <p>
+            <label for="Tenggat">Tenggat</label>
+            <input type="date" id="Tenggat" name="Tenggat" required>
+            </p>
+            <p>
+            <label for="Waktu">Waktu</label>
+            <input type="time" id="Waktu" name="Waktu" required>
+            </p>
+            <p>
+            <label for="Prioritas">Prioritas</label>
+            <input type="text" id="Prioritas" name="Prioritas" required>
+            </p>
+            <button type="submit">Simpan</button>
+        </form>
+        </section> 
   </main>
 
   
     <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
          Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->
-<table>
-  <caption>Daftar Aktivitas Hari Ini</caption>
-  <thead>
-    <tr>
-      <th scope="col">Nama Aktifitas</th>
-      <th scope="col">Waktu</th>
-      <th scope="col">Tenggat</th>
-      <th scope="col">Prioritas</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Kelas Pertama</th>
-      <td>08:00 - 10:00</td>
-      <td>2026-10-15</td>
-      <td>Tinggi</td>
-      <td>Belum selesai</td>
-    </tr>
-    <tr>
-      <th scope="row">Kelas Kedua</th>
-      <td>10:30 - 12:30</td>
-      <td>2026-10-15</td>
-      <td>Sedang</td>
-      <td>Belum selesai</td>
-    </tr>
-    <tr>
-      <th scope="row">Kelas Ketiga</th>
-      <td>13:00 - 15:00</td>
-      <td>2026-10-15</td>
-      <td>Rendah</td>
-      <td>Belum selesai</td>
-    </tr>
-    <tr>
-      <th scope="row">Kerja Kelompok</th>
-      <td>15:30 - 18:00</td>
-      <td>2026-10-17</td>
-      <td>Rendah</td>
-      <td>Belum selesai</td>
-    </tr>
-    <!-- tambahkan minimal dua baris lagi -->
-  </tbody>
-</table>
 
 <figure>
   <img src="todo-list.jpeg"
@@ -114,30 +133,7 @@
          Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
          cocok dengan id input-nya, dan satu atribut validasi. -->
 
-<section id="Tambah-Aktivitas">
-      <h2>Tambah Aktivitas</h2>
 
-      <form action="/simpan" method="post"></form>
-        <p>
-          <label for="Nama-Aktivitas">Nama Aktivitas</label>
-          <input type="text" id="Nama-Aktivitas" name="Nama-Aktivitas" required>
-        </p>
-        <!-- tambahkan minimal dua baris lagi -->
-        <p>
-          <label for="Tenggat">Tenggat</label>
-          <input type="date" id="Tenggat" name="Tenggat" required>
-        </p>
-        <p>
-          <label for="Waktu">Waktu</label>
-          <input type="time" id="Waktu" name="Waktu" required>
-        </p>
-        <p>
-          <label for="Prioritas">Prioritas</label>
-          <input type="text" id="Prioritas" name="Prioritas" required>
-        </p>
-        <button type="submit">Simpan</button>
-      </form>
-    </section>
 
   <!-- TODO C.3: buat <footer> di sini.
        Isinya: nama Anda, NIM Anda, dan tahun. -->
