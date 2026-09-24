@@ -30,7 +30,7 @@
   --color-fg:      var(--gray-800);
   --color-surface: var(--white);
   --color-border:  var(--cream-200);
-  --color-primary: var(#7C3AED);
+  --color-primary: var(--green-500);
   --color-danger:  var(--pink-600);
   --color-focus:   var(--color-primary);
 
