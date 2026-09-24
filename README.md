@@ -19,3 +19,5 @@ Topik halaman saya:  To do list aktivitas keseharian
  
 Saya bekerja sama dengan teman, mengerjakan di kos teman setelah jam mata kuliah selesai.
 Untuk penggunaan ai saya meminta bantuan pada saat tidak bisa yang lighouse, dan beberapa penjelasan saya cari di goggle saat tidak paham.
+
+
