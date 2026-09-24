@@ -40,6 +40,8 @@ Untuk penggunaan ai saya meminta bantuan pada saat tidak bisa yang lighouse, dan
 | --space-4 | 1rem | jarak standar antar elemen |
 
 Kriteria selesai saya: mengubah --color-primary di satu baris harus mengubah warna tombol, tautan, judul, dan garis fokus.
+Penggunaan AI : Saya bekerja sama dengan teman saat jam mata kuliah selesai.
+Untuk penggunaan AI saya meminta petunjuk penerjaan, nbeberapa penjelasan yang saya kurang paham seperti beberapa pertanyaan di bagian G, cari inspirasi warna yang bagus juga, cara menguji tema terang dan gelap juga, dan beberapa saya cari di goggle untuk mencari kata asing yang saya kurang paham.
  
 
 
