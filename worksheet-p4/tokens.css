@@ -30,10 +30,13 @@
   --color-fg:      var(--gray-800);
   --color-surface: var(--white);
   --color-border:  var(--cream-200);
-  --color-primary: var(--green-500);
+  --color-primary: var(--pink-300);
   --color-danger:  var(--pink-600);
   --color-focus:   var(--color-primary);
 
   --card-pad:    var(--space-4);
   --section-gap: var(--space-6);
+}
+:root {
+  --blue-700: #7C3AED;      /* ganti dengan warna lain */
 }
