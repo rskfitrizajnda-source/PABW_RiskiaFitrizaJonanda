@@ -1,15 +1,12 @@
 /* LAPIS 1 — primitif: nilai mentah, tidak menyebut peran apa pun */
 :root {
-  --blue-700: #9CCBE8;
-  --blue-500: #C8B6E2;
-
-  --pink-500: #E8A6B5;
-
-  --gray-50: #F7F5FA;
-  --gray-900: #303B4A;
-  --white: #FFFFFF;
-
-  --border-100: #E3DDE8;
+  --pink-300: #F3B8B8;
+  --pink-600: #D98282;
+  --blue-200: #B8E0F3;
+  --cream-50:  #FFF8EF;
+  --cream-200: #E8DDD1;
+  --gray-800:  #3B3835;
+  --white:     #FFFFFF;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -18,7 +15,8 @@
   --space-6: 1.5rem;
 
   --radius-md: 0.5rem;
-  --shadow-1: 0 1px 3px rgba(0, 0, 0, .10);
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.10);
+
 
   --text-sm: 0.875rem;
   --text-md: 1rem;
@@ -28,15 +26,14 @@
 
 /* LAPIS 2 — semantik: peran. Isinya mengacu ke lapis 1. */
 :root {
-  --color-bg:       var(--gray-50);
-  --color-fg:       var(--gray-900);
-  --color-surface:  var(--white);
-  --color-border:   var(--border-100);
+  --color-bg:      var(--cream-50);
+  --color-fg:      var(--gray-800);
+  --color-surface: var(--white);
+  --color-border:  var(--cream-200);
+  --color-primary: var(--pink-300);
+  --color-danger:  var(--pink-600);
+  --color-focus:   var(--color-primary);
 
-  --color-primary:  var(--blue-700);
-  --color-danger:   var(--pink-500);
-  --color-focus:    var(--blue-500);
-
-  --card-pad:       var(--space-4);
-  --section-gap:    var(--space-6);
+  --card-pad:    var(--space-4);
+  --section-gap: var(--space-6);
 }
