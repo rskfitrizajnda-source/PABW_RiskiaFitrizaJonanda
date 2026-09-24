@@ -25,6 +25,24 @@
   <link rel="stylesheet" href="komponen.css">
   <link rel="stylesheet" href="tema.css">
 </head>
+<!-- taruh di dalam <header>, sebelum judul -->
+<input type="checkbox" id="tema" class="pengalih-tema">
+<label for="tema" class="tombol-tema">Tema gelap</label>
+ 
+/* CSS */
+.pengalih-tema { position: absolute; opacity: 0; pointer-events: none; }
+ 
+/* Pilihan manual HARUS berada setelah blok media query,
+   supaya menang saat keduanya menyala bersamaan. */
+:root:has(#tema:checked) {
+  --color-bg:      #0F172A;
+  --color-fg:      #E2E8F0;
+  --color-surface: #1E293B;
+  --color-border:  #334155;
+  --color-primary: #7DA9F7;
+  --color-danger:  #FF8A8A;
+  --color-focus:   #FFC000;
+}
 
 
   <!-- TODO B.1: tambahkan dua baris meta di bawah ini:
