@@ -1,56 +1,60 @@
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
-}
- 
-.header-baris {                /* <div class="header-baris"> di dalam header */
-  display: flex;
-  align-items: center;          /* sumbu silang: rata tengah */
-  justify-content: space-between; /* sumbu utama: judul kiri, menu kanan */
+  display: flex;                   /* Aktifkan flexbox langsung di header */
+  align-items: center;             /* Rata tengah secara vertikal */
+  justify-content: space-between;  /* Judul di kiri, menu di kanan */
   gap: var(--space-4);
-  flex-wrap: wrap;              /* turun baris di layar sempit, jangan meluber */
+  flex-wrap: wrap;                 /* Turun baris otomatis di layar sempit */
 }
- 
-nav ul {
+
+/* Hilangkan margin bawaan h1 agar sejajar sempurna */
+header h1 {
+  margin: 0;
+}
+
+/* Atur nav langsung sebagai flex container */
+nav {
   display: flex;
   gap: var(--space-4);
-  list-style: none;             /* daftar nav tanpa butir */
-  padding: 0;
 }
- 
+
 nav a {
   color: var(--color-primary);
   text-decoration: none;
 }
- 
-nav a:hover { text-decoration: underline; }
 
+nav a:hover { 
+  text-decoration: underline; 
+}
+
+/* Sisa kode Anda (main, .katalog, .kartu, footer) sudah sempurna dan tidak perlu diubah */
 main {
   display: flex;
   flex-direction: column;
-  gap: var(--section-gap);      /* jarak antar bagian, tanpa margin */
+  gap: var(--section-gap);
   padding-block: var(--space-6);
 }
- 
+
 .katalog {
   display: flex;
-  flex-wrap: wrap;              /* kunci responsif: kartu turun sendiri */
+  flex-wrap: wrap;
   gap: var(--space-4);
 }
- 
+
 .kartu {
-  flex: 1 1 16rem;              /* tumbuh, menyusut, lebar dasar 16rem */
+  flex: 1 1 16rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-1);
   padding: var(--card-pad);
 }
- 
+
 footer {
   margin-top: var(--space-6);
   padding-block: var(--space-4);
   border-top: 1px solid var(--color-border);
-  color: var(--color-fg);       /* hindari abu pucat yang gagal kontras */
+  color: var(--color-fg);
   font-size: var(--text-sm);
 }
