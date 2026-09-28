@@ -1,11 +1,9 @@
-/* Kerangka Utama Halaman */
 .page {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100dvh;
 }
 
-/* Header & Flexbox Baris Header */
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
@@ -17,12 +15,6 @@ header {
   justify-content: space-between;
   gap: var(--space-4);
   flex-wrap: wrap;
-}
-
-.navbar {
-  display: flex;
-  gap: var(--space-4);
-  align-items: center;
 }
 
 nav ul {
@@ -37,39 +29,28 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover { 
-  text-decoration: underline; 
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* Area Isi Utama (Grid 2 Kolom) */
 main.isi {
   display: grid;
   grid-template-columns: 16rem 1fr;
-  grid-template-areas:
-    "sisi utama";
+  grid-template-areas: "sisi utama";
   gap: var(--space-6);
   padding-block: var(--space-6);
 }
 
-/* Penempatan Kolom Kiri dan Kanan */
-.sisi  { 
-  grid-area: sisi; 
-  min-width: 0; /* Mencegah tabel melebarkan kolom secara paksa */
+.sisi {
+  grid-area: sisi;
+  min-width: 0;
 }
 
-.utama { 
-  grid-area: utama; 
-  min-width: 0; 
+.utama {
+  grid-area: utama;
+  min-width: 0;
 }
 
-/* Memastikan tabel tidak meluber keluar dari kolom 16rem */
-table {
-  display: block;
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-/* Footer */
 footer {
   padding-block: var(--space-4);
   border-top: 1px solid var(--color-border);
