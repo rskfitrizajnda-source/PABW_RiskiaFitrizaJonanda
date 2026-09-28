@@ -96,3 +96,11 @@ footer {
 .sisi  { grid-area: sisi; }
 .utama { grid-area: utama; }
 
+.galeri .kartu {
+  display: grid;
+  align-content: start;
+  min-height: 14rem;
+}
+
+.kartu__isi { min-width: 0; }
+.kartu__judul { overflow-wrap: anywhere; }
