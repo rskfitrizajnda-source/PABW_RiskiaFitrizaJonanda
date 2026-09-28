@@ -42,11 +42,32 @@ nav a:hover {
   grid-template-columns: 16rem 1fr;
   gap: var(--space-6);
   padding-block: var(--space-6);
-  align-items: start;
+  /* align-items: start;  <-- INI DIHAPUS agar sidebar memanjang ke bawah */
 }
 
+/* Sidebar */
 .sisi {
-  /* Sidebar */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Membuat container nav mengisi seluruh ruang sidebar */
+.sisi nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Membuat list menu mengisi seluruh ruang */
+.sisi nav ul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mendorong item terakhir (Tentang Saya) ke paling bawah */
+.sisi nav ul li:last-child {
+  margin-top: auto;
 }
 
 .utama {
