@@ -1,24 +1,11 @@
 <!DOCTYPE html>
-<!--
-  KERANGKA AWAL — Halaman Profil Saya
-  PABW 2026/2027 · Pertemuan 3
-
-  Cara pakai:
-  1. Salin berkas ini, ganti nama menjadi profil.html
-  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
-  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
-  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
-
-  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
-  komentar itu adalah daftar periksa Anda sendiri.
--->
 <html lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do List Aktivitas Keseharian</title>
 
-<!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -->
+  <!-- urutan: token -> dasar -> tata letak -> komponen -> tema -->
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="layout.css">
@@ -26,132 +13,134 @@
   <link rel="stylesheet" href="tema.css">
 </head>
 
+<body>
+  <!-- Wadah utama halaman: dipakai grid 3 baris -->
+  <div class="page">
 
-  <!-- TODO B.1: tambahkan dua baris meta di bawah ini:
-       <meta charset="...">
-       <meta name="viewport" content="...">  -->
+    <!-- Baris 1: navbar memakai flex -->
+    <header class="navbar">
+      <div class="navbar__merek">
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">Tema gelap</label>
+        <h1>To Do List Aktivitas Keseharian</h1>
+      </div>
 
-  <!-- TODO C.1: buat <header> di sini.
-       Isinya: satu <h1> berisi judul halaman Anda.
-       Di dalamnya juga ada <nav> berisi 3 tautan ke bagian halaman. -->
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
+          <li><a href="#Tambah-Aktivitas">Tambah Aktivitas</a></li>
+          <li><a href="#Tentang-Saya">Tentang Saya</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <header>
-    <!-- taruh di dalam <header>, sebelum judul -->
-<input type="checkbox" id="tema" class="pengalih-tema">
-<label for="tema" class="tombol-tema">Tema gelap</label>
+    <!-- Baris 2: isi memakai grid dua kolom -->
+    <main class="isi">
 
-    <h1>To Do List Aktivitas Keseharian</h1>
-    <nav aria-label="Navigasi utama">
-      <ul>
-        <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
-        <li><a href="#Tambah-Aktivitas">Tambah Aktivitas</a></li>
-        <li><a href="#Tentang-Saya">Tentang Saya</a></li>
-      </ul>
-    </nav>
-  </header>
- 
+      <!-- Konten utama: galeri kartu -->
+      <section id="Daftar-Aktivitas-Harian" class="utama">
+        <h2>Daftar Aktivitas Harian</h2>
 
-  <!-- TODO C.2: buat <main> di sini sebagai pembungkus semua bagian isi.
-       Di dalamnya ada 2 <section>, masing-masing punya <h2> sendiri. -->
+        <div class="galeri">
+          <article class="kartu">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Kelas Pertama</h3>
+              <p>08:00 - 10:00 · Tenggat 2026-10-15</p>
+              <p>Prioritas: Tinggi</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Belum selesai</span>
+              <button type="button">Tandai</button>
+            </div>
+          </article>
 
-  <main>
-    <section id="Daftar-Aktivitas-Harian">
-      <h2>Daftar Aktivitas Harian</h2>
-    <table>
-    <caption>Daftar Aktivitas Hari Ini</caption>
-    <thead>
-        <tr>
-        <th scope="col">Nama Aktifitas</th>
-        <th scope="col">Waktu</th>
-        <th scope="col">Tenggat</th>
-        <th scope="col">Prioritas</th>
-        <th scope="col">Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <th scope="row">Kelas Pertama</th>
-        <td>08:00 - 10:00</td>
-        <td>2026-10-15</td>
-        <td>Tinggi</td>
-        <td>Belum selesai</td>
-        </tr>
-        <tr>
-        <th scope="row">Kelas Kedua</th>
-        <td>10:30 - 12:30</td>
-        <td>2026-10-15</td>
-        <td>Sedang</td>
-        <td>Belum selesai</td>
-        </tr>
-        <tr>
-        <th scope="row">Kelas Ketiga</th>
-        <td>13:00 - 15:00</td>
-        <td>2026-10-15</td>
-        <td>Rendah</td>
-        <td>Belum selesai</td>
-        </tr>
-        <tr>
-        <th scope="row">Kerja Kelompok</th>
-        <td>15:30 - 18:00</td>
-        <td>2026-10-17</td>
-        <td>Rendah</td>
-        <td>Belum selesai</td>
-        </tr>
-        <!-- tambahkan minimal dua baris lagi -->
-    </tbody>
-    </table>
+          <article class="kartu">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Kelas Kedua</h3>
+              <p>10:30 - 12:30 · Tenggat 2026-10-15</p>
+              <p>Prioritas: Sedang</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Belum selesai</span>
+              <button type="button">Tandai</button>
+            </div>
+          </article>
 
-      <!-- tabel Anda nanti di sini (Lembar D) -->
-    </section>
-    <section id="Tambah-Aktivitas-Baru">
+          <article class="kartu">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Kelas Ketiga</h3>
+              <p>13:00 - 15:00 · Tenggat 2026-10-15</p>
+              <p>Prioritas: Rendah</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Belum selesai</span>
+              <button type="button">Tandai</button>
+            </div>
+          </article>
+
+          <article class="kartu">
+            <div class="kartu__isi">
+              <h3 class="kartu__judul">Kerja Kelompok</h3>
+              <p>15:30 - 18:00 · Tenggat 2026-10-17</p>
+              <p>Prioritas: Rendah</p>
+            </div>
+            <div class="kartu__kaki">
+              <span>Belum selesai</span>
+              <button type="button">Tandai</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sidebar: form tambah aktivitas -->
+      <section id="Tambah-Aktivitas" class="sisi">
         <h2>Tambah Aktivitas Baru</h2>
 
-        <form action="/simpan" method="post"></form>
-            <p>
+        <form action="/simpan" method="post">
+          <div class="form-kolom">
             <label for="Nama-Aktivitas">Nama Aktivitas</label>
             <input type="text" id="Nama-Aktivitas" name="Nama-Aktivitas" required>
-            </p>
-            <!-- tambahkan minimal dua baris lagi -->
-            <p>
+          </div>
+
+          <div class="form-kolom">
             <label for="Tenggat">Tenggat</label>
             <input type="date" id="Tenggat" name="Tenggat" required>
-            </p>
-            <p>
+          </div>
+
+          <div class="form-kolom">
             <label for="Waktu">Waktu</label>
             <input type="time" id="Waktu" name="Waktu" required>
-            </p>
-            <p>
+          </div>
+
+          <div class="form-kolom">
             <label for="Prioritas">Prioritas</label>
-            <input type="text" id="Prioritas" name="Prioritas" required>
-            </p>
-            <button type="submit">Simpan</button>
+            <select id="Prioritas" name="Prioritas" required>
+              <option value="">Pilih prioritas</option>
+              <option>Tinggi</option>
+              <option>Sedang</option>
+              <option>Rendah</option>
+            </select>
+          </div>
+
+          <button type="submit">Simpan</button>
         </form>
-        </section> 
-  </main>
+      </section>
 
-  
-    <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
-         Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->
+      <!-- Area bawah: figure / tentang saya -->
+      <figure id="Tentang-Saya" class="bawah kartu">
+        <img src="todo-list.jpeg"
+             alt="Ilustrasi To Do List Aktivitas Keseharian"
+             width="300" height="360" loading="lazy">
+        <figcaption>Ilustrasi To Do List Aktivitas Keseharian</figcaption>
+      </figure>
 
-<figure>
-  <img src="todo-list.jpeg"
-       alt="Ilustrasi To Do List Aktivitas Keseharian"
-       width="300" height="360" loading="lazy">
-  <figcaption>Ilustrasi To Do List Aktivitas Keseharian</figcaption>
-</figure>
+    </main>
 
+    <!-- Baris 3: footer -->
+    <footer>
+      <p>RiskiaFitrizaJonanda · 25523026 · 2026</p>
+    </footer>
 
-    <!-- TODO E.1: di dalam section kedua, buat form Anda.
-         Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
-         cocok dengan id input-nya, dan satu atribut validasi. -->
-
-
-
-  <!-- TODO C.3: buat <footer> di sini.
-       Isinya: nama Anda, NIM Anda, dan tahun. -->
- <footer>
-    <p>RiskiaFitrizaJonanda · 25523026 · 2026</p>
-  </footer>
-</body>
+  </div>
 </body>
 </html>
