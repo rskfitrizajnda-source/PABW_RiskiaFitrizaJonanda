@@ -1,77 +1,22 @@
+/* Kerangka Utama Halaman */
 .page {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100dvh;
 }
 
+/* Header & Flexbox Baris Header */
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
 }
 
-.header-baris {                /* <div class="header-baris"> di dalam header */
-  display: flex;
-  align-items: center;          /* sumbu silang: rata tengah */
-  justify-content: space-between; /* sumbu utama: judul kiri, menu kanan */
-  gap: var(--space-4);
-  flex-wrap: wrap;              /* turun baris di layar sempit, jangan meluber */
-}
-
-nav ul {
-  display: flex;
-  gap: var(--space-4);
-  list-style: none;             /* daftar nav tanpa butir */
-  padding: 0;
-}
-
-nav a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-nav a:hover { text-decoration: underline; }
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--section-gap);      /* jarak antar bagian, tanpa margin */
-  padding-block: var(--space-6);
-}
-
-.galeri {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: var(--space-4);
-}
-
-.kartu {
-  flex: 1 1 16rem;              /* tumbuh, menyusut, lebar dasar 16rem */
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-1);
-  padding: var(--card-pad);
-}
-
-.kartu__kaki {
+.header-baris {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-2);
-}
-
-.katalog {
-  display: flex;
-  flex-wrap: wrap;              /* kunci responsif: kartu turun sendiri */
   gap: var(--space-4);
-}
-
-footer {
-  margin-top: var(--space-6);
-  padding-block: var(--space-4);
-  border-top: 1px solid var(--color-border);
-  color: var(--color-fg);       /* hindari abu pucat yang gagal kontras */
-  font-size: var(--text-sm);
+  flex-wrap: wrap;
 }
 
 .navbar {
@@ -80,22 +25,54 @@ footer {
   align-items: center;
 }
 
-.isi {
+nav ul {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+nav a:hover { 
+  text-decoration: underline; 
+}
+
+/* Area Isi Utama (Grid 2 Kolom) */
+main.isi {
   display: grid;
   grid-template-columns: 16rem 1fr;
   grid-template-areas:
-    "sisi utama"
-    "sisi bawah";
+    "sisi utama";
   gap: var(--space-6);
-}
-.sisi  { grid-area: sisi; }
-.utama { grid-area: utama; }
-
-.galeri .kartu {
-  display: grid;
-  align-content: start;
-  min-height: 14rem;
+  padding-block: var(--space-6);
 }
 
-.kartu__isi { min-width: 0; }
-.kartu__judul { overflow-wrap: anywhere; }
+/* Penempatan Kolom Kiri dan Kanan */
+.sisi  { 
+  grid-area: sisi; 
+  min-width: 0; /* Mencegah tabel melebarkan kolom secara paksa */
+}
+
+.utama { 
+  grid-area: utama; 
+  min-width: 0; 
+}
+
+/* Memastikan tabel tidak meluber keluar dari kolom 16rem */
+table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Footer */
+footer {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-fg);
+  font-size: var(--text-sm);
+}
