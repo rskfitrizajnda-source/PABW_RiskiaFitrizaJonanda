@@ -51,3 +51,5 @@ input:user-invalid {
 .pesan-galat       { display: none; color: var(--color-danger); font-size: var(--text-sm); }
 .form-kolom:has(input:user-invalid) .pesan-galat { display: block; }
 
+.sorotan { grid-column: span 2; }
+.papan    { grid-row: span 2; }
