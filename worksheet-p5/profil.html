@@ -34,18 +34,21 @@
          Isinya: satu <h1> berisi judul halaman Anda.
          Di dalamnya juga ada <nav> berisi 3 tautan ke bagian halaman. -->
     <header>
-      <!-- taruh di dalam <header>, sebelum judul -->
-      <input type="checkbox" id="tema" class="pengalih-tema">
-      <label for="tema" class="tombol-tema">Tema gelap</label>
+      <!-- Wadah .header-baris agar flexbox di CSS dapat menata posisi header -->
+      <div class="header-baris">
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">Tema gelap</label>
 
-      <h1>To Do List Aktivitas Keseharian</h1>
-      <nav aria-label="Navigasi utama">
-        <ul>
-          <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
-          <li><a href="#Tambah-Aktivitas-Baru">Tambah Aktivitas</a></li>
-          <li><a href="#Tentang-Saya">Tentang Saya</a></li>
-        </ul>
-      </nav>
+        <h1>To Do List Aktivitas Keseharian</h1>
+        
+        <nav aria-label="Navigasi utama" class="navbar">
+          <ul>
+            <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
+            <li><a href="#Tambah-Aktivitas-Baru">Tambah Aktivitas</a></li>
+            <li><a href="#Tentang-Saya">Tentang Saya</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- TODO C.2: buat <main> di sini sebagai pembungkus semua bagian isi.
@@ -54,7 +57,8 @@
 
       <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
            Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->
-      <section id="Daftar-Aktivitas-Harian">
+      <!-- Diberi class="sisi" agar masuk ke kolom kiri Grid sesuai layout.css -->
+      <section id="Daftar-Aktivitas-Harian" class="sisi">
         <h2>Daftar Aktivitas Harian</h2>
         <table>
           <caption>Daftar Aktivitas Hari Ini</caption>
@@ -108,7 +112,8 @@
       <!-- TODO E.1: di dalam section kedua, buat form Anda.
            Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
            cocok dengan id input-nya, dan satu atribut validasi. -->
-      <section id="Tambah-Aktivitas-Baru">
+      <!-- Diberi class="utama" agar masuk ke kolom kanan Grid sesuai layout.css -->
+      <section id="Tambah-Aktivitas-Baru" class="utama">
         <h2>Tambah Aktivitas Baru</h2>
 
         <form action="/simpan" method="post">
