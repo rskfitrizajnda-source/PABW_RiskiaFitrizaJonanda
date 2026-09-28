@@ -72,3 +72,17 @@ footer {
   grid-template-columns: 16rem 1fr;
   gap: var(--space-6);
 }
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+}
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
