@@ -1,10 +1,24 @@
 <!DOCTYPE html>
+<!--
+  KERANGKA AWAL — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+
+  Cara pakai:
+  1. Salin berkas ini, ganti nama menjadi profil.html
+  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
+  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
+  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
+
+  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
+  komentar itu adalah daftar periksa Anda sendiri.
+-->
 <html lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do List Aktivitas Keseharian</title>
 
+  <!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -->
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="layout.css">
@@ -13,16 +27,19 @@
 </head>
 <body>
 
+  <!-- B.1 Worksheet P5: Wadah pembungkus .page ditaruh di sini (tepat setelah <body>) -->
   <div class="page">
 
+    <!-- TODO C.1: buat <header> di sini.
+         Isinya: satu <h1> berisi judul halaman Anda.
+         Di dalamnya juga ada <nav> berisi 3 tautan ke bagian halaman. -->
     <header>
       <div class="header-baris">
         <input type="checkbox" id="tema" class="pengalih-tema">
         <label for="tema" class="tombol-tema">Tema gelap</label>
 
         <h1>To Do List Aktivitas Keseharian</h1>
-
-        <nav aria-label="Navigasi utama" class="navbar">
+        <nav aria-label="Navigasi utama">
           <ul>
             <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
             <li><a href="#Tambah-Aktivitas-Baru">Tambah Aktivitas</a></li>
@@ -32,8 +49,12 @@
       </div>
     </header>
 
+    <!-- TODO C.2: buat <main> di sini sebagai pembungkus semua bagian isi.
+         Di dalamnya ada 2 <section>, masing-masing punya <h2> sendiri. -->
     <main class="isi">
 
+      <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
+           Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->
       <section id="Daftar-Aktivitas-Harian" class="sisi">
         <h2>Daftar Aktivitas Harian</h2>
         <table>
@@ -85,6 +106,9 @@
         </figure>
       </section>
 
+      <!-- TODO E.1: di dalam section kedua, buat form Anda.
+           Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
+           cocok dengan id input-nya, dan satu atribut validasi. -->
       <section id="Tambah-Aktivitas-Baru" class="utama">
         <h2>Tambah Aktivitas Baru</h2>
 
@@ -110,11 +134,13 @@
       </section> 
     </main>
 
+    <!-- TODO C.3: buat <footer> di sini.
+         Isinya: nama Anda, NIM Anda, dan tahun. -->
     <footer>
       <p>RiskiaFitrizaJonanda · 25523026 · 2026</p>
     </footer>
 
-  </div>
+  </div> <!-- Penutup <div class="page"> B.1 Worksheet P5 -->
 
 </body>
 </html>
