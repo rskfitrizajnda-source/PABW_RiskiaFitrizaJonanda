@@ -1,10 +1,4 @@
-.page {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100dvh;
-}
 
-/* Header & Navbar */
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
@@ -42,32 +36,11 @@ nav a:hover {
   grid-template-columns: 16rem 1fr;
   gap: var(--space-6);
   padding-block: var(--space-6);
-  /* align-items: start;  <-- INI DIHAPUS agar sidebar memanjang ke bawah */
+  align-items: start;
 }
 
-/* Sidebar */
 .sisi {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Membuat container nav mengisi seluruh ruang sidebar */
-.sisi nav {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Membuat list menu mengisi seluruh ruang */
-.sisi nav ul {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Mendorong item terakhir (Tentang Saya) ke paling bawah */
-.sisi nav ul li:last-child {
-  margin-top: auto;
+  /* Sidebar */
 }
 
 .utama {
