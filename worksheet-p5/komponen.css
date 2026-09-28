@@ -1,13 +1,30 @@
-.form-kolom {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);          /* jarak label ke isian, seragam */
-}
-
 .galeri {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--space-4);
+}
+
+/* Kartu memakai flex di dalam */
+.kartu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  min-height: 14rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+}
+
+.kartu__isi {
+  flex: 1;
+  min-width: 0;
+}
+
+.kartu__judul {
+  overflow-wrap: anywhere;
 }
 
 .kartu__kaki {
@@ -17,30 +34,29 @@
   gap: var(--space-2);
 }
 
-.sorotan { grid-column: span 2; }
-.papan    { grid-row: span 2; }
-
-.galeri .kartu {
-  display: grid;
-  align-content: start;
-  min-height: 14rem;
+/* Form */
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
- 
 label {
   font-size: var(--text-sm);
   font-weight: 600;
 }
- 
-input, select, textarea {
-  font: inherit;                /* kolom isian ikut ukuran huruf halaman */
+
+input,
+select,
+textarea {
+  font: inherit;
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   color: var(--color-fg);
 }
- 
+
 button {
   font: inherit;
   padding: var(--space-2) var(--space-4);
@@ -51,26 +67,26 @@ button {
   cursor: pointer;
 }
 
-
-/* :focus-visible hanya muncul saat pengguna memakai papan ketik */
+/* Fokus hanya saat keyboard */
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
- 
-/* JANGAN seperti ini — pengguna papan ketik kehilangan jejak */
-/* *:focus { outline: none; } */
 
-/* SALAH — form tampak merah padahal pengguna belum menyentuhnya */
-input:invalid { border-color: var(--color-danger); }
- 
-/* BENAR — hanya setelah pengguna mengetik sesuatu yang tidak sah */
-input:user-invalid {
+/* Validasi setelah pengguna menyentuh input */
+input:user-invalid,
+select:user-invalid {
   border-color: var(--color-danger);
   border-width: 2px;
 }
- 
-/* Pesan galat: sembunyikan selama belum tidak-sah, tampilkan saat perlu */
-.pesan-galat       { display: none; color: var(--color-danger); font-size: var(--text-sm); }
-.form-kolom:has(input:user-invalid) .pesan-galat { display: block; }
 
+.pesan-galat {
+  display: none;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat,
+.form-kolom:has(select:user-invalid) .pesan-galat {
+  display: block;
+}
