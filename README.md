@@ -44,4 +44,6 @@ Penggunaan AI : Saya bekerja sama dengan teman saat jam mata kuliah selesai.
 Untuk penggunaan AI saya meminta petunjuk penerjaan, nbeberapa penjelasan yang saya kurang paham seperti beberapa pertanyaan di bagian G, cari inspirasi warna yang bagus juga, cara menguji tema terang dan gelap juga, dan beberapa saya cari di goggle untuk mencari kata asing yang saya kurang paham.
  
 
-
+## Pertemuan 5 — Flexbox dan Grid
+## Catatan penggunaan AI
+Beberapa saya cari di AI seperti kode kode yang harus di tambah itu di bagian mana nya, di komponen.css, layout.css dan profil.html, juga saya searcing beberapa kata yang menurut saya asing dan tiak tau maknanya. Beberapa kode juga saya memeinta bantuan AI.
