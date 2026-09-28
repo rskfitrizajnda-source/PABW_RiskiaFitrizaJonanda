@@ -1,3 +1,9 @@
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
@@ -31,10 +37,10 @@ main {
   gap: var(--section-gap);      /* jarak antar bagian, tanpa margin */
   padding-block: var(--space-6);
 }
- 
-.katalog {
-  display: flex;
-  flex-wrap: wrap;              /* kunci responsif: kartu turun sendiri */
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--space-4);
 }
  
@@ -46,6 +52,19 @@ main {
   box-shadow: var(--shadow-1);
   padding: var(--card-pad);
 }
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.katalog {
+  display: flex;
+  flex-wrap: wrap;              /* kunci responsif: kartu turun sendiri */
+  gap: var(--space-4);
+}
  
 footer {
   margin-top: var(--space-6);
@@ -53,12 +72,6 @@ footer {
   border-top: 1px solid var(--color-border);
   color: var(--color-fg);       /* hindari abu pucat yang gagal kontras */
   font-size: var(--text-sm);
-}
-
-.page {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100dvh;
 }
 
 .navbar {
@@ -73,16 +86,4 @@ footer {
   gap: var(--space-6);
 }
 
-.galeri {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: var(--space-4);
-}
-
-.kartu__kaki {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-}
 
