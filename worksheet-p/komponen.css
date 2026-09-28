@@ -1,0 +1,98 @@
+/* Galeri dan Kartu (Worksheet P5) */
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-4);
+}
+
+.galeri .kartu {
+  display: grid;
+  align-content: start;
+  min-height: 14rem;
+}
+
+.kartu__isi {
+  min-width: 0;
+}
+
+.kartu__judul {
+  overflow-wrap: anywhere;
+}
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/* Elemen Formulir */
+
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+input, 
+select, 
+textarea {
+  font: inherit;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  cursor: pointer;
+}
+
+/* Aksesibilitas dan Validasi */
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+input:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+.pesan-galat {
+  display: none;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
+.form-kolom:has(input:user-invalid) .pesan-galat {
+  display: block;
+}
+
+/* Pengalih Tema */
+
+.pengalih-tema {
+  display: none;
+}
+
+.tombol-tema {
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}

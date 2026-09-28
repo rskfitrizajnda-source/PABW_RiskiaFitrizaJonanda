@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List Aktivitas Keseharian</title>
+
+  <!-- Urutan CSS: token -> dasar -> tata letak -> komponen -> tema -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+</head>
+<body>
+
+  <!-- Wadah utama pembungkus halaman (Worksheet P5 - B.1) -->
+  <div class="page">
+
+    <!-- HEADER / BARIS PERTAMA -->
+    <header>
+      <input type="checkbox" id="tema" class="pengalih-tema">
+      <label for="tema" class="tombol-tema">Tema gelap</label>
+
+      <h1>To Do List Aktivitas Keseharian</h1>
+
+      <nav class="navbar" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
+          <li><a href="#Tambah-Aktivitas">Tambah Aktivitas</a></li>
+          <li><a href="#Tentang-Saya">Tentang Saya</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN / KONTEN UTAMA (Worksheet P5 - B.2 Layout Grid 2 Kolom) -->
+    <main class="isi">
+
+      <!-- Kolom Utama -->
+      <div class="utama">
+        
+        <!-- Section 1: Tabel Aktivitas Harian -->
+        <section id="Daftar-Aktivitas-Harian">
+          <h2>Daftar Aktivitas Harian</h2>
+          <table>
+            <caption>Daftar Aktivitas Hari Ini</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nama Aktivitas</th>
+                <th scope="col">Waktu</th>
+                <th scope="col">Tenggat</th>
+                <th scope="col">Prioritas</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Kelas Pertama</th>
+                <td>08:00 - 10:00</td>
+                <td>2026-10-15</td>
+                <td>Tinggi</td>
+                <td>Belum selesai</td>
+              </tr>
+              <tr>
+                <th scope="row">Kelas Kedua</th>
+                <td>10:30 - 12:30</td>
+                <td>2026-10-15</td>
+                <td>Sedang</td>
+                <td>Belum selesai</td>
+              </tr>
+              <tr>
+                <th scope="row">Kelas Ketiga</th>
+                <td>13:00 - 15:00</td>
+                <td>2026-10-15</td>
+                <td>Rendah</td>
+                <td>Belum selesai</td>
+              </tr>
+              <tr>
+                <th scope="row">Kerja Kelompok</th>
+                <td>15:30 - 18:00</td>
+                <td>2026-10-17</td>
+                <td>Rendah</td>
+                <td>Belum selesai</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Section 2: Form Tambah Aktivitas -->
+        <section id="Tambah-Aktivitas">
+          <h2>Tambah Aktivitas Baru</h2>
+          <form action="/simpan" method="post">
+            <p>
+              <label for="Nama-Aktivitas">Nama Aktivitas</label>
+              <input type="text" id="Nama-Aktivitas" name="Nama-Aktivitas" required>
+            </p>
+            <p>
+              <label for="Tenggat">Tenggat</label>
+              <input type="date" id="Tenggat" name="Tenggat" required>
+            </p>
+            <p>
+              <label for="Waktu">Waktu</label>
+              <input type="time" id="Waktu" name="Waktu" required>
+            </p>
+            <p>
+              <label for="Prioritas">Prioritas</label>
+              <select id="Prioritas" name="Prioritas" required>
+                <option value="">-- Pilih Prioritas --</option>
+                <option value="Tinggi">Tinggi</option>
+                <option value="Sedang">Sedang</option>
+                <option value="Rendah">Rendah</option>
+              </select>
+            </p>
+            <button type="submit">Simpan</button>
+          </form>
+        </section>
+
+      </div>
+
+      <!-- Kolom Sidebar / Informasi Tambahan -->
+      <aside class="sisi" id="Tentang-Saya">
+        <h2>Tentang Saya</h2>
+        <figure>
+          <img src="todo-list.jpeg" alt="Ilustrasi To Do List Aktivitas Keseharian" width="300" height="360" loading="lazy">
+          <figcaption>Ilustrasi To Do List Aktivitas Keseharian</figcaption>
+        </figure>
+      </aside>
+
+    </main>
+
+    <!-- FOOTER / BARIS KETIGA -->
+    <footer>
+      <p>RiskiaFitrizaJonanda · 25523026 · 2026</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
