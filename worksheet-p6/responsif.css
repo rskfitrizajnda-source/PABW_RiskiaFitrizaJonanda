@@ -1,0 +1,13 @@
+/* dasar: berlaku di semua lebar */
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+Semua nilai tetap memakai token dari Pertemuan 4, misalnya var(--space-4). Tidak ada nilai jarak yang ditulis langsung sebagai piksel.
