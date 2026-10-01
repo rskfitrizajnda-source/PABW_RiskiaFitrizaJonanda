@@ -10,4 +10,6 @@
   grid-template-columns: 1fr;
   gap: var(--space-4);
 }
-Semua nilai tetap memakai token dari Pertemuan 4, misalnya var(--space-4). Tidak ada nilai jarak yang ditulis langsung sebagai piksel.
+
+/* teks mengikuti ukuran huruf pengguna */
+p { font-size: 1rem; line-height: 1.6; }

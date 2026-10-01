@@ -5,6 +5,10 @@
 * { margin: 0; }               /* hapus jarak bawaan; atur sendiri memakai gap */
  
 img { max-width: 100%; height: auto; display: block; }
+
+/* tabel lebar dapat digulir sendiri */
+.table-wrap { overflow-x: auto; }
+
 html {
   font-size: 100%;            /* ikuti pengaturan pengguna, jangan dipatok */
 }
