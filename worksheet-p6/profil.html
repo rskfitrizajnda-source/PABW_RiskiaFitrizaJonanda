@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List Aktivitas Keseharian</title>
+
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+</head>
+<body>
+
+  <!-- Pembungkus paling luar untuk Grid 3 Baris (Lembar B.1) -->
+  <div class="page">
+
+    <header>
+      <div class="header-baris">
+        <h1>To Do List Aktivitas Keseharian</h1>
+        
+        <nav aria-label="Navigasi utama">
+          <ul>
+            <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas</a></li>
+            <li><a href="#Tambah-Aktivitas">Tambah Aktivitas</a></li>
+            <li><a href="#Tentang-Saya">Tentang Saya</a></li>
+          </ul>
+        </nav>
+
+        <!-- Pengalih tema gelap -->
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">Tema gelap</label>
+      </div>
+    </header>
+
+    <main class="isi">
+      <!-- SIDEBAR KIRI -->
+      <aside class="sisi">
+        <h2>Menu</h2>
+        <nav>
+          <ul>
+            <li><a href="#Daftar-Aktivitas-Harian">Daftar Aktivitas Harian</a></li>
+            <li><a href="#Tambah-Aktivitas">Tambah Aktivitas</a></li>
+            <li><a href="#Tentang-Saya">Tentang Saya</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- KONTEN UTAMA (KANAN) -->
+      <div class="utama">
+        
+        <!-- Section 1: Daftar Aktivitas (Menggunakan Galeri Kartu) -->
+        <section id="Daftar-Aktivitas-Harian">
+          <h2>Daftar Aktivitas Harian</h2>
+          
+          <div class="galeri">
+            <!-- Kartu 1 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kelas Pertama</h3>
+                <p>08:00 - 10:00</p>
+                <p>Tenggat: 2026-10-15</p>
+                <p>Prioritas: Tinggi</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
+
+            <!-- Kartu 2 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kelas Kedua</h3>
+                <p>10:30 - 12:30</p>
+                <p>Tenggat: 2026-10-15</p>
+                <p>Prioritas: Sedang</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
+
+            <!-- Kartu 3 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kelas Ketiga</h3>
+                <p>13:00 - 15:00</p>
+                <p>Tenggat: 2026-10-15</p>
+                <p>Prioritas: Rendah</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
+
+            <!-- Kartu 4 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kerja Kelompok</h3>
+                <p>15:30 - 18:00</p>
+                <p>Tenggat: 2026-10-17</p>
+                <p>Prioritas: Rendah</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Section 2: Tentang Saya (Gambar) -->
+        <section id="Tentang-Saya">
+          <h2>Tentang Saya</h2>
+          <figure class="kartu" style="max-width: 320px;">
+            <img src="todo-list.jpeg" 
+                 alt="Ilustrasi To Do List Aktivitas Keseharian" 
+                 width="300" height="360" loading="lazy">
+            <figcaption>Ilustrasi To Do List Aktivitas Keseharian</figcaption>
+          </figure>
+        </section>
+
+        <!-- Section 3: Form Tambah Aktivitas -->
+        <section id="Tambah-Aktivitas">
+          <h2>Form Tambah Aktivitas</h2>
+          <form action="/simpan" method="post">
+            
+            <div class="form-kolom">
+              <label for="Nama-Aktivitas">Nama Aktivitas</label>
+              <input type="text" id="Nama-Aktivitas" name="Nama-Aktivitas" required>
+              <span class="pesan-galat">Nama aktivitas wajib diisi.</span>
+            </div>
+
+            <div class="form-kolom">
+              <label for="Tenggat">Tenggat</label>
+              <input type="date" id="Tenggat" name="Tenggat" required>
+              <span class="pesan-galat">Tenggat wajib diisi.</span>
+            </div>
+
+            <div class="form-kolom">
+              <label for="Waktu">Waktu</label>
+              <input type="time" id="Waktu" name="Waktu" required>
+              <span class="pesan-galat">Waktu wajib diisi.</span>
+            </div>
+
+            <div class="form-kolom">
+              <label for="Prioritas">Prioritas</label>
+              <select id="Prioritas" name="Prioritas" required>
+                <option value="">Pilih prioritas</option>
+                <option>Tinggi</option>
+                <option>Sedang</option>
+                <option>Rendah</option>
+              </select>
+              <span class="pesan-galat">Prioritas wajib dipilih.</span>
+            </div>
+
+            <button type="submit">Simpan</button>          
+          </form>
+        </section>
+
+      </div>
+    </main>
+
+    <footer>
+      <p>RiskiaFitrizaJonanda · 25523026 · 2026</p>
+    </footer>
+
+  </div> <!-- / .page -->
+</body>
+</html>
