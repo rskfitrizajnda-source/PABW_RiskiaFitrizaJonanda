@@ -47,3 +47,7 @@ Untuk penggunaan AI saya meminta petunjuk penerjaan, nbeberapa penjelasan yang s
 ## Pertemuan 5 — Flexbox dan Grid
 ## Catatan penggunaan AI
 Beberapa saya cari di AI seperti kode kode yang harus di tambah itu di bagian mana nya, di komponen.css, layout.css dan profil.html, juga saya searcing beberapa kata yang menurut saya asing dan tiak tau maknanya. Beberapa kode juga saya memeinta bantuan AI.
+
+## Pertemuan 6 - Responsif Mobile-First
+## Catatan penggunaan AI
+Beberapa saya cari di AI, seperti kode nya harus ditaruh di class mana. Juga beberapa pertanyaan di A2, C2, D2, terus juga E1 untuk cara cek nya itu gimana, dan juga E3. Beberapa hal juga seperti posisi sidebar yang benar saya tanya karena banyak yang berbeda dengan teman teman, dan di AI juga beda sama punya ku, dan setelah bertanya ke bapaknya, ternyata bebas kembali ke kreativitas masing-masing.
