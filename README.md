@@ -54,4 +54,4 @@ Beberapa saya cari di AI, seperti kode nya harus ditaruh di class mana. Juga beb
 
 ## Pertemuan 8 - JavaScript
 ## Catatan penggunaan AI
-Mencari step bt step pengerjaan, bertanya karena adanya error di console dan cara memperbaikinya, cara mengecek galat dan cara memeperbaikinya, menjawab pertanyaan tiket keluar yang tidak di mengerti maksudnya, cara meriksa satu per satu dan mengecek apakah pengerjaan sudah benar atau belum sesuai ws.
+Mencari step bt step pengerjaan, bertanya karena adanya error di console dan cara memperbaikinya, cara mengecek galat dan cara memeperbaikinya, menjawab pertanyaan tiket keluar yang tidak di mengerti maksudnya, cara meriksa satu per satu dan mengecek apakah pengerjaan sudah benar atau belum sesuai ws dan juga cara mencari tahu kapan digunakan pada bagian referensi javasript.
