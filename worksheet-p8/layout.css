@@ -11,13 +11,23 @@ header {
   flex-wrap: wrap;
 }
 
-nav ul {
+aside.sisi nav ul {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
 nav a {
