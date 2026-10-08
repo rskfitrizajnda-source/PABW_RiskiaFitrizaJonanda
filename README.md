@@ -51,3 +51,7 @@ Beberapa saya cari di AI seperti kode kode yang harus di tambah itu di bagian ma
 ## Pertemuan 6 - Responsif Mobile-First
 ## Catatan penggunaan AI
 Beberapa saya cari di AI, seperti kode nya harus ditaruh di class mana. Juga beberapa pertanyaan di A2, C2, D2, terus juga E1 untuk cara cek nya itu gimana, dan juga E3. Beberapa hal juga seperti posisi sidebar yang benar saya tanya karena banyak yang berbeda dengan teman teman, dan di AI juga beda sama punya ku, dan setelah bertanya ke bapaknya, ternyata bebas kembali ke kreativitas masing-masing.
+
+## Pertemuan 8 - JavaScript
+## Catatan penggunaan AI
+Mencari step bt step pengerjaan, bertanya karena adanya error di console dan cara memperbaikinya, cara mengecek galat dan cara memeperbaikinya, menjawab pertanyaan tiket keluar yang tidak di mengerti maksudnya, cara meriksa satu per satu dan mengecek apakah pengerjaan sudah benar atau belum sesuai ws.
