@@ -26,6 +26,12 @@ h1 { font-size: var(--text-3xl); line-height: 1.15; }
 h2 { font-size: var(--text-xl);  line-height: 1.25; }
 h3 { font-size: var(--text-md); }
  
+/* Paksa link sidebar dan navbar jadi coklat */
+aside.sisi nav a,
+header nav a {
+  color: var(--color-fg) !important;
+}
+
 /* Batasi panjang baris supaya mata mudah berpindah baris */
 main p { max-width: 60ch; }
 
