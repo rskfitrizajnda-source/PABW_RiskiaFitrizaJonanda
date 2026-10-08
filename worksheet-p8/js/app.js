@@ -20,3 +20,7 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
+// Uji coba 3 argumen berbeda di dalam file
+console.log(buatPerkenalan({ nama: "Budi", peran: "Desainer" }));
+console.log(buatPerkenalan({ nama: "Siti", peran: "Backend" }));
+console.log(formatKeahlian(["Python", "PHP", "Laravel"]));
