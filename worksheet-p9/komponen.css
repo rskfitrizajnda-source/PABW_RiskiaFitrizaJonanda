@@ -2,6 +2,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--space-4);
+  list-style: none;   /* ← tambahan: hapus bullet <ul> */
+  padding: 0;         /* ← tambahan: hapus padding bawaan <ul> */
+  margin: 0;          /* ← tambahan: hapus margin bawaan <ul> */
+}
+
+#filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
 }
 
 /* Kartu memakai flex di dalam */
@@ -69,6 +79,11 @@ button {
   background: var(--color-primary);
   color: var(--color-surface);
   cursor: pointer;
+}
+
+#filter button {
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
 }
 
 /* Fokus hanya saat keyboard */
