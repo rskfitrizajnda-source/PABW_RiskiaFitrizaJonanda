@@ -18,7 +18,6 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
-// ===== DATA PROYEK — dipakai oleh dom.js =====
 export const daftarProyek = [
   { judul: "Kelas Pertama",  waktu: "08:00 - 10:00", tenggat: "2026-10-15", prioritas: "Tinggi", selesai: true,  kategori: "web"    },
   { judul: "Kelas Kedua",    waktu: "10:30 - 12:30", tenggat: "2026-10-15", prioritas: "Sedang", selesai: false, kategori: "mobile" },

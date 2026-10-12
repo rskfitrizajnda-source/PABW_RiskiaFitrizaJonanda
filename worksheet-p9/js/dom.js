@@ -1,6 +1,5 @@
 import { daftarProyek } from './app.js';
 
-// ===== Lembar A: pilih elemen =====
 const wadah       = document.querySelector("#daftar");
 const barisFilter = document.querySelector("#filter");
 const pesanKosong = document.querySelector("#pesan-kosong");
@@ -16,7 +15,6 @@ const errorWaktu     = document.querySelector("#error-waktu");
 const errorPrioritas = document.querySelector("#error-prioritas");
 const tombolKirim    = document.querySelector("#kirim");
 
-// ===== Lembar B: buat kartu dari data =====
 function buatKartu(proyek) {
   const li = document.createElement("li");
   li.className = "kartu";
@@ -55,7 +53,6 @@ function buatKartu(proyek) {
   return li;
 }
 
-// ===== Lembar B.2 + C.2: render =====
 function render(daftar) {
   wadah.textContent = "";
 
@@ -68,14 +65,12 @@ function render(daftar) {
   daftar.forEach((proyek) => wadah.append(buatKartu(proyek)));
 }
 
-// ===== Lembar C.2: tandai tombol yang aktif =====
 function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle("aktif", tombol === tombolAktif);
   });
 }
 
-// ===== Lembar C.1: satu pendengar di induk =====
 barisFilter.addEventListener("click", (event) => {
   const tombol = event.target.closest("button");
   if (!tombol) return;
@@ -89,7 +84,6 @@ barisFilter.addEventListener("click", (event) => {
   render(terpilih);
 });
 
-// ===== Lembar D.2: validasi per kolom =====
 function validasiNama() {
   const sah = inputNama.value.trim() !== "";
   errorNama.textContent = sah ? "" : "Nama aktivitas wajib diisi.";
@@ -128,15 +122,14 @@ function periksaForm() {
   return sah;
 }
 
-// Validasi saat pengguna mengetik / memilih
 [inputNama, inputTenggat, inputWaktu, inputPrioritas].forEach((el) => {
   el.addEventListener("input", periksaForm);
   el.addEventListener("change", periksaForm);
 });
 
-// ===== Lembar D.2: submit handler =====
+
 form.addEventListener("submit", (event) => {
-  event.preventDefault(); // halaman tidak dimuat ulang
+  event.preventDefault();
 
   if (!periksaForm()) {
     const kolomSalah = form.querySelector('[aria-invalid="true"]');
@@ -147,7 +140,6 @@ form.addEventListener("submit", (event) => {
   alert("Form valid! Data siap dikirim.");
 });
 
-// ===== Render pertama kali + tandai tombol "Semua" =====
 tandaiTombolAktif(document.querySelector('#filter button[data-kategori="semua"]'));
 render(daftarProyek);
 periksaForm();
