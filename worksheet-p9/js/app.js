@@ -18,11 +18,12 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
-const daftarProyek = [
-  { judul: "Kelas Pertama", tahun: 2026, selesai: true },
-  { judul: "Kelas Kedua", tahun: 2026, selesai: false },
-  { judul: "Kelas Ketiga", tahun: 2026, selesai: true },
-  { judul: "Kerja Kelompok", tahun: 2026, selesai: false }
+// ===== DATA PROYEK — dipakai oleh dom.js =====
+export const daftarProyek = [
+  { judul: "Kelas Pertama",  waktu: "08:00 - 10:00", tenggat: "2026-10-15", prioritas: "Tinggi", selesai: true,  kategori: "web"    },
+  { judul: "Kelas Kedua",    waktu: "10:30 - 12:30", tenggat: "2026-10-15", prioritas: "Sedang", selesai: false, kategori: "mobile" },
+  { judul: "Kelas Ketiga",   waktu: "13:00 - 15:00", tenggat: "2026-10-15", prioritas: "Rendah", selesai: true,  kategori: "web"    },
+  { judul: "Kerja Kelompok", waktu: "15:30 - 18:00", tenggat: "2026-10-17", prioritas: "Rendah", selesai: false, kategori: "desain" }
 ];
 
 console.table(profil.keahlian);
@@ -40,4 +41,4 @@ console.log(judulSaja);
 const urut = [...daftarProyek].sort((a, b) => a.judul.localeCompare(b.judul));
 console.table(urut);
 
-console.table(daftarProyek); 
+console.table(daftarProyek);
