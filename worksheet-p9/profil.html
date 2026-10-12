@@ -54,19 +54,65 @@
         <!-- Section 1: Daftar Aktivitas (Menggunakan Galeri Kartu) -->
         <section id="Daftar-Aktivitas-Harian">
           <h2>Daftar Aktivitas Harian</h2>
+          
+          <div class="galeri">
+            <!-- Kartu 1 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kelas Pertama</h3>
+                <p>08:00 - 10:00</p>
+                <p>Tenggat: 2026-10-15</p>
+                <p>Prioritas: Tinggi</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
 
-          <div id="filter">
-            <button type="button" data-kategori="semua" class="aktif">Semua</button>
-            <button type="button" data-kategori="Tinggi">Tinggi</button>
-            <button type="button" data-kategori="Sedang">Sedang</button>
-            <button type="button" data-kategori="Rendah">Rendah</button>
+            <!-- Kartu 2 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kelas Kedua</h3>
+                <p>10:30 - 12:30</p>
+                <p>Tenggat: 2026-10-15</p>
+                <p>Prioritas: Sedang</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
+
+            <!-- Kartu 3 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kelas Ketiga</h3>
+                <p>13:00 - 15:00</p>
+                <p>Tenggat: 2026-10-15</p>
+                <p>Prioritas: Rendah</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
+
+            <!-- Kartu 4 -->
+            <article class="kartu">
+              <div class="kartu__isi">
+                <h3 class="kartu__judul">Kerja Kelompok</h3>
+                <p>15:30 - 18:00</p>
+                <p>Tenggat: 2026-10-17</p>
+                <p>Prioritas: Rendah</p>
+              </div>
+              <div class="kartu__kaki">
+                <span>Belum selesai</span>
+                <button type="button">Tandai</button>
+              </div>
+            </article>
           </div>
-
-          <p id="kosong" hidden>Tidak ada aktivitas pada kategori ini.</p>
-
-           <!-- WADAH: pakai <ul>, class galeri tetap untuk styling grid -->
-            <ul class="galeri" id="daftar"></ul>
-          </section>
+        </section>
 
         <!-- Section 2: Tentang Saya (Gambar) -->
         <section id="Tentang-Saya">
@@ -82,24 +128,24 @@
         <!-- Section 3: Form Tambah Aktivitas -->
         <section id="Tambah-Aktivitas">
           <h2>Form Tambah Aktivitas</h2>
-          <form id="form-aktivitas" action="/simpan" method="post">
+          <form action="/simpan" method="post">
             
             <div class="form-kolom">
               <label for="Nama-Aktivitas">Nama Aktivitas</label>
               <input type="text" id="Nama-Aktivitas" name="Nama-Aktivitas" required>
-              <span class="pesan-galat" id="galat-nama">Nama aktivitas wajib diisi.</span>
+              <span class="pesan-galat">Nama aktivitas wajib diisi.</span>
             </div>
 
             <div class="form-kolom">
               <label for="Tenggat">Tenggat</label>
               <input type="date" id="Tenggat" name="Tenggat" required>
-             <span class="pesan-galat" id="galat-tenggat">Tenggat wajib diisi.</span>
+              <span class="pesan-galat">Tenggat wajib diisi.</span>
             </div>
 
             <div class="form-kolom">
               <label for="Waktu">Waktu</label>
               <input type="time" id="Waktu" name="Waktu" required>
-              <span class="pesan-galat" id="galat-waktu">Waktu wajib diisi.</span>
+              <span class="pesan-galat">Waktu wajib diisi.</span>
             </div>
 
             <div class="form-kolom">
@@ -110,7 +156,7 @@
                 <option>Sedang</option>
                 <option>Rendah</option>
               </select>
-              <span class="pesan-galat" id="galat-prioritas">Prioritas wajib dipilih.</span>
+              <span class="pesan-galat">Prioritas wajib dipilih.</span>
             </div>
 
             <button type="submit">Simpan</button>          
