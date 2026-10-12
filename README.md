@@ -55,3 +55,7 @@ Beberapa saya cari di AI, seperti kode nya harus ditaruh di class mana. Juga beb
 ## Pertemuan 8 - JavaScript
 ## Catatan penggunaan AI
 Mencari step bt step pengerjaan, bertanya karena adanya error di console dan cara memperbaikinya, cara mengecek galat dan cara memeperbaikinya, menjawab pertanyaan tiket keluar yang tidak di mengerti maksudnya, cara meriksa satu per satu dan mengecek apakah pengerjaan sudah benar atau belum sesuai ws dan juga cara mencari tahu kapan digunakan pada bagian referensi javasript.
+
+## Pertemuan 9 - DOM, Event, dan Interaktivitas
+## Catatan penggunaan AI
+Mencari penjelasan dan pemahasan dari ws nya, menanyakan error, perbaikan kode, menanyakan cara pengerjaan dari awal sampai akhir dijelaskan dengan bahasa yang lebih sederhana agar mudah dipahami, menambah kode yang perlu ditambah, menjawab pertanyaan yang di pahami dan dijelaskan dengan bahasa sederhana, mencari tau galat dan cara menanganinya, terus juga mencari tau bagian mana yang dijadikan bukti, menjelaskan perbedaan querySelector vs querySelectorAll, menjelaskan kenapa baris wadah.textContent = "" wajib ada di awal render, membantu membaca pesan error di Console, dan membantu menjawab beberapa pertanyaan yang masih kesulitan dan mengisi referensi cepat dom
