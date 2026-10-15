@@ -1,4 +1,4 @@
-const ALAMAT = 'data/proyek.json'; // relatif terhadap profil.html
+const ALAMAT = 'https://raw.githubusercontent.com/rskfitrizajnda-source/PABW_RiskiaFitrizaJonanda/refs/heads/main/worksheet-p10/data/proyek.json';
 
 export async function ambilProyek() {
   try {
