@@ -1,8 +1,7 @@
-import { daftarProyek } from './app.js';
-
 const wadah       = document.querySelector("#daftar");
 const barisFilter = document.querySelector("#filter");
 const pesanKosong = document.querySelector("#pesan-kosong");
+const pesanMuat   = document.querySelector("#muat"); // baru hari ini
 
 const form           = document.querySelector("#form-profil");
 const inputNama      = document.querySelector("#Nama-Aktivitas");
@@ -15,6 +14,11 @@ const errorWaktu     = document.querySelector("#error-waktu");
 const errorPrioritas = document.querySelector("#error-prioritas");
 const tombolKirim    = document.querySelector("#kirim");
 
+// Data mentah hasil fetch, disimpan untuk keperluan filter.
+// Diisi dari app.js lewat simpanData(data).
+let semuaProyek = [];
+
+// --- Fungsi dari P9 ---
 function buatKartu(proyek) {
   const li = document.createElement("li");
   li.className = "kartu";
@@ -24,7 +28,7 @@ function buatKartu(proyek) {
 
   const judul = document.createElement("h3");
   judul.className = "kartu__judul";
-  judul.textContent = proyek.judul;
+  judul.textContent = proyek.judul;              // textContent, bukan innerHTML
 
   const waktu = document.createElement("p");
   waktu.textContent = proyek.waktu;
@@ -53,18 +57,45 @@ function buatKartu(proyek) {
   return li;
 }
 
-function render(daftar) {
-  wadah.textContent = "";
+// --- render() dari P9, diperluas hari ini ---
+export function render(daftar) {
+  wadah.textContent = "";                          // 1. kosongkan dulu
 
-  if (daftar.length === 0) {
+  if (daftar.length === 0) {                       // 2. keadaan kosong
+    pesanKosong.textContent = "Belum ada data.";
     pesanKosong.hidden = false;
     return;
   }
 
-  pesanKosong.hidden = true;
+  pesanKosong.hidden = true;                       // 3. isi ulang
   daftar.forEach((proyek) => wadah.append(buatKartu(proyek)));
 }
 
+// --- Simpan data mentah (dari app.js) untuk keperluan filter ---
+export function simpanData(data) {
+  semuaProyek = data;
+}
+
+// --- Fungsi baru: atur pesan "memuat" ---
+export function aturMemuat(status) {
+  if (status) {
+    pesanMuat.hidden   = false;   // tampilkan "Memuat data..."
+    wadah.hidden       = true;
+    pesanKosong.hidden = true;
+  } else {
+    pesanMuat.hidden   = true;
+    wadah.hidden       = false;
+  }
+}
+
+// --- Fungsi baru: tampilkan pesan galat di halaman ---
+export function tampilkanGalat(pesan) {
+  wadah.textContent = "";
+  pesanKosong.textContent = pesan;
+  pesanKosong.hidden = false;
+}
+
+// --- Filter dari P9, disesuaikan: pakai semuaProyek ---
 function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle("aktif", tombol === tombolAktif);
@@ -76,7 +107,7 @@ barisFilter.addEventListener("click", (event) => {
   if (!tombol) return;
 
   const kategori = tombol.dataset.kategori;
-  const terpilih = daftarProyek.filter(
+  const terpilih = semuaProyek.filter(
     (proyek) => kategori === "semua" || proyek.kategori === kategori
   );
 
@@ -84,6 +115,7 @@ barisFilter.addEventListener("click", (event) => {
   render(terpilih);
 });
 
+// --- Validasi form dari P9, tidak berubah ---
 function validasiNama() {
   const sah = inputNama.value.trim() !== "";
   errorNama.textContent = sah ? "" : "Nama aktivitas wajib diisi.";
@@ -127,19 +159,14 @@ function periksaForm() {
   el.addEventListener("change", periksaForm);
 });
 
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
   if (!periksaForm()) {
     const kolomSalah = form.querySelector('[aria-invalid="true"]');
     if (kolomSalah) kolomSalah.focus();
     return;
   }
-
   alert("Form valid! Data siap dikirim.");
 });
 
-tandaiTombolAktif(document.querySelector('#filter button[data-kategori="semua"]'));
-render(daftarProyek);
 periksaForm();
