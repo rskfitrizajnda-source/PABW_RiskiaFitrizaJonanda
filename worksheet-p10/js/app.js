@@ -1,7 +1,3 @@
-// js/app.js — Lembar A
-// Perakit: memanggil lapisan data (api.js).
-// TIDAK boleh ada kata "fetch" di berkas ini.
-
 import { muat } from './api.js';
 
 muat()
