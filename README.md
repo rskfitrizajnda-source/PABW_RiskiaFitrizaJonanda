@@ -59,3 +59,7 @@ Mencari step bt step pengerjaan, bertanya karena adanya error di console dan car
 ## Pertemuan 9 - DOM, Event, dan Interaktivitas
 ## Catatan penggunaan AI
 Mencari penjelasan dan pemahasan dari ws nya, menanyakan error, perbaikan kode, menanyakan cara pengerjaan dari awal sampai akhir dijelaskan dengan bahasa yang lebih sederhana agar mudah dipahami, menambah kode yang perlu ditambah, menjawab pertanyaan yang di pahami dan dijelaskan dengan bahasa sederhana, mencari tau galat dan cara menanganinya, terus juga mencari tau bagian mana yang dijadikan bukti, menjelaskan perbedaan querySelector vs querySelectorAll, menjelaskan kenapa baris wadah.textContent = "" wajib ada di awal render, membantu membaca pesan error di Console, dan membantu menjawab beberapa pertanyaan yang masih kesulitan dan mengisi referensi cepat dom
+
+## Pertemuan 10 - JavaScript Asinkron: fetch, Promise, dan JSON
+## Catatan penggunaan AI
+Mencari penjelasan, di bagian A4 juga mencari tambahan kode ekspor impor, ada error juga saat di A4 mencari jalan keluarnya, meminta penjelasan cara menjawab  peta data saya di C2, cara memeriksa data lapisan di D4, mencari cara memperbaiki gejala yang dilihat di E4, cara memeriksa satu persatu caranya gimana di F1, cara bukti empat keaddan di F2 adn mengisi catatannya, mencari penjelasan tiket keluar, serta mencari kapan dipakainya function di H.
