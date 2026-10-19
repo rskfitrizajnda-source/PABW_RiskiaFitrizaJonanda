@@ -4,7 +4,7 @@ import { tampilkanGalat, aturMemuat } from './dom.js';
 import { pasangPendengar } from './events.js';
 
 async function mulai() {
-  console.log("=== APLIKASI DIMULAI ==="); // <--- TARUH DI SINI
+  console.log("=== APLIKASI DIMULAI ===");
   pulihkan(muat()); 
   pasangPendengar();
   

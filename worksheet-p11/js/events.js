@@ -1,6 +1,5 @@
-import { pilihKategori, tambahFavorit } from './state.js';
+import { pilihKategori, tambahFavorit, aturUlang } from './state.js';
 
-// 1. Ambil semua elemen DOM yang dibutuhkan untuk event
 const barisFilter    = document.querySelector("#filter");
 const wadahDaftar    = document.querySelector("#daftar");
 const form           = document.querySelector("#form-profil");
@@ -14,28 +13,26 @@ const errorWaktu     = document.querySelector("#error-waktu");
 const errorPrioritas = document.querySelector("#error-prioritas");
 const tombolKirim    = document.querySelector("#kirim");
 
-// 2. Bungkus semuanya dalam satu fungsi perakit event
 export function pasangPendengar() {
   
-  // --- A. Event untuk Filter Kategori ---
   barisFilter.addEventListener("click", (event) => {
     const tombol = event.target.closest("button");
     if (!tombol) return;
     
-    // Panggil fungsi pengubah state, BUKAN manipulasi DOM langsung
-    pilihKategori(tombol.dataset.kategori); 
+    if (tombol.id === "atur-ulang") {
+      aturUlang();
+    } else {
+      pilihKategori(tombol.dataset.kategori); 
+    }
   });
 
-  // --- B. Event untuk Tombol Favorit (Lembar C) ---
   wadahDaftar.addEventListener("click", (event) => {
     const tombol = event.target.closest(".favorit");
     if (!tombol) return;
     
-    // Panggil fungsi tambahFavorit dari state.js
     tambahFavorit(Number(tombol.dataset.id));
   });
 
-  // --- C. Event untuk Validasi Form (dari P9) ---
   function validasiNama() {
     const sah = inputNama.value.trim() !== "";
     errorNama.textContent = sah ? "" : "Nama aktivitas wajib diisi.";
@@ -85,6 +82,5 @@ export function pasangPendengar() {
     alert("Form valid! Data siap dikirim.");
   });
 
-  // Jalankan pengecekan form saat pertama kali dimuat
   periksaForm(); 
 }
