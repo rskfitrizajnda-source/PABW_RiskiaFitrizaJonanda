@@ -1,25 +1,13 @@
+// 1. Impor fungsi saring dari data.js
+import { saring } from './data.js';
+
+// 2. Ambil elemen DOM (hanya yang dibutuhkan untuk render)
 const wadah       = document.querySelector("#daftar");
-const barisFilter = document.querySelector("#filter");
 const pesanKosong = document.querySelector("#pesan-kosong");
-const pesanMuat   = document.querySelector("#muat"); // baru hari ini
+const pesanMuat   = document.querySelector("#muat"); 
 
-const form           = document.querySelector("#form-profil");
-const inputNama      = document.querySelector("#Nama-Aktivitas");
-const inputTenggat   = document.querySelector("#Tenggat");
-const inputWaktu     = document.querySelector("#Waktu");
-const inputPrioritas = document.querySelector("#Prioritas");
-const errorNama      = document.querySelector("#error-nama");
-const errorTenggat   = document.querySelector("#error-tenggat");
-const errorWaktu     = document.querySelector("#error-waktu");
-const errorPrioritas = document.querySelector("#error-prioritas");
-const tombolKirim    = document.querySelector("#kirim");
-
-// Data mentah hasil fetch, disimpan untuk keperluan filter.
-// Diisi dari app.js lewat simpanData(data).
-let semuaProyek = [];
-
-// --- Fungsi dari P9 ---
-function buatKartu(proyek) {
+// 3. Fungsi buatKartu (Ditambah tombol favorit dari Lembar C)
+function buatKartu(proyek, favorit) {
   const li = document.createElement("li");
   li.className = "kartu";
 
@@ -28,7 +16,7 @@ function buatKartu(proyek) {
 
   const judul = document.createElement("h3");
   judul.className = "kartu__judul";
-  judul.textContent = proyek.judul;              // textContent, bukan innerHTML
+  judul.textContent = proyek.judul;
 
   const waktu = document.createElement("p");
   waktu.textContent = proyek.waktu;
@@ -47,39 +35,58 @@ function buatKartu(proyek) {
   const status = document.createElement("span");
   status.textContent = proyek.selesai ? "Selesai" : "Belum selesai";
 
-  const tombol = document.createElement("button");
-  tombol.type = "button";
-  tombol.textContent = "Tandai";
+  // --- TOMBOL FAVORIT BARU ---
+  const tombolFav = document.createElement("button");
+  tombolFav.type = "button";
+  tombolFav.className = "favorit";
+  tombolFav.dataset.id = proyek.id;
+  tombolFav.textContent = favorit.includes(proyek.id) ? "★" : "☆"; // Bintang penuh jika favorit
+  
+  // Tombol Tandai (dari P9)
+  const tombolTandai = document.createElement("button");
+  tombolTandai.type = "button";
+  tombolTandai.textContent = "Tandai";
 
-  kaki.append(status, tombol);
+  kaki.append(status, tombolFav, tombolTandai);
   li.append(isi, kaki);
 
   return li;
 }
 
-// --- render() dari P9, diperluas hari ini ---
-export function render(daftar) {
-  wadah.textContent = "";                          // 1. kosongkan dulu
+// 4. Fungsi render() yang baru (Menerima state)
+export function render(state) {
+  wadah.textContent = ""; // 1. Kosongkan dulu
 
-  if (daftar.length === 0) {                       // 2. keadaan kosong
+  // 2. Ambil data yang sudah difilter menggunakan fungsi saring
+  const tampil = saring(state.daftarProyek, state.kategoriAktif);
+
+  if (tampil.length === 0) { // 3. Keadaan kosong
     pesanKosong.textContent = "Belum ada data.";
     pesanKosong.hidden = false;
     return;
   }
 
-  pesanKosong.hidden = true;                       // 3. isi ulang
-  daftar.forEach((proyek) => wadah.append(buatKartu(proyek)));
+  pesanKosong.hidden = true; // 4. Isi ulang
+  
+  // Gambar kartu berdasarkan data yang tampil dan state favorit
+  tampil.forEach((proyek) => wadah.append(buatKartu(proyek, state.favorit)));
+
+  // Panggil fungsi penanda tombol filter aktif
+  tandaiTombolAktif(state.kategoriAktif);
 }
 
-// --- Simpan data mentah (dari app.js) untuk keperluan filter ---
-export function simpanData(data) {
-  semuaProyek = data;
+// 5. Penanda tombol filter aktif (Dipanggil dari render)
+function tandaiTombolAktif(kategoriAktif) {
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    // Bandingkan dataset dengan state
+    tombol.classList.toggle("aktif", tombol.dataset.kategori === kategoriAktif);
+  });
 }
 
-// --- Fungsi baru: atur pesan "memuat" ---
+// 6. Fungsi pendukung memuat dan error
 export function aturMemuat(status) {
   if (status) {
-    pesanMuat.hidden   = false;   // tampilkan "Memuat data..."
+    pesanMuat.hidden   = false;
     wadah.hidden       = true;
     pesanKosong.hidden = true;
   } else {
@@ -88,85 +95,8 @@ export function aturMemuat(status) {
   }
 }
 
-// --- Fungsi baru: tampilkan pesan galat di halaman ---
 export function tampilkanGalat(pesan) {
   wadah.textContent = "";
   pesanKosong.textContent = pesan;
   pesanKosong.hidden = false;
 }
-
-// --- Filter dari P9, disesuaikan: pakai semuaProyek ---
-function tandaiTombolAktif(tombolAktif) {
-  document.querySelectorAll("#filter button").forEach((tombol) => {
-    tombol.classList.toggle("aktif", tombol === tombolAktif);
-  });
-}
-
-barisFilter.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button");
-  if (!tombol) return;
-
-  const kategori = tombol.dataset.kategori;
-  const terpilih = semuaProyek.filter(
-    (proyek) => kategori === "semua" || proyek.kategori === kategori
-  );
-
-  tandaiTombolAktif(tombol);
-  render(terpilih);
-});
-
-// --- Validasi form dari P9, tidak berubah ---
-function validasiNama() {
-  const sah = inputNama.value.trim() !== "";
-  errorNama.textContent = sah ? "" : "Nama aktivitas wajib diisi.";
-  inputNama.setAttribute("aria-invalid", String(!sah));
-  return sah;
-}
-
-function validasiTenggat() {
-  const sah = inputTenggat.value.trim() !== "";
-  errorTenggat.textContent = sah ? "" : "Tenggat wajib diisi.";
-  inputTenggat.setAttribute("aria-invalid", String(!sah));
-  return sah;
-}
-
-function validasiWaktu() {
-  const sah = inputWaktu.value.trim() !== "";
-  errorWaktu.textContent = sah ? "" : "Waktu wajib diisi.";
-  inputWaktu.setAttribute("aria-invalid", String(!sah));
-  return sah;
-}
-
-function validasiPrioritas() {
-  const sah = inputPrioritas.value.trim() !== "";
-  errorPrioritas.textContent = sah ? "" : "Prioritas wajib dipilih.";
-  inputPrioritas.setAttribute("aria-invalid", String(!sah));
-  return sah;
-}
-
-function periksaForm() {
-  const sah =
-    validasiNama() &&
-    validasiTenggat() &&
-    validasiWaktu() &&
-    validasiPrioritas();
-  tombolKirim.disabled = !sah;
-  return sah;
-}
-
-[inputNama, inputTenggat, inputWaktu, inputPrioritas].forEach((el) => {
-  el.addEventListener("input", periksaForm);
-  el.addEventListener("change", periksaForm);
-});
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!periksaForm()) {
-    const kolomSalah = form.querySelector('[aria-invalid="true"]');
-    if (kolomSalah) kolomSalah.focus();
-    return;
-  }
-  alert("Form valid! Data siap dikirim.");
-});
-
-periksaForm();

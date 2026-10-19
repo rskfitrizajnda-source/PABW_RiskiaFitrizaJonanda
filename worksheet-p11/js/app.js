@@ -1,10 +1,11 @@
 import { ambilProyek } from './api.js';
-import { isiProyek, pulihkan, muat } from './state.js';
+import { state, isiProyek, pulihkan, muat } from './state.js'; 
 import { tampilkanGalat, aturMemuat } from './dom.js';
 import { pasangPendengar } from './events.js';
 
 async function mulai() {
-  
+  console.log("=== APLIKASI DIMULAI ==="); // <--- TARUH DI SINI
+  pulihkan(muat()); 
   pasangPendengar();
   
   aturMemuat(true);
