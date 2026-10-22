@@ -67,3 +67,8 @@ Mencari penjelasan, di bagian A4 juga mencari tambahan kode ekspor impor, ada er
 ## Pertemuan 11 -  Modul, State, dan Penyimpanan Klien
 ## Catatan penggunaan AI
 Mencari penjelasan di Lembar A2 tentang cara memeriksa api.js dan mengantisipasi nama file yang bentrok, mencari cara menghitung baris yang menyentuh halaman di A3, dan panduan menyusun tabel rencana modul di A4. Saat masuk Lembar B, saya sangat banyak meminta bantuan karena sering error saat memecah file, mulai dari mencari tahu isi file data.js, state.js, events.js, dom.js, hingga app.js, sampai meminta penjelasan mengapa muncul error "does not provide an export named" karena lupa export, dan error "forEach is not a function". Di Lembar C, saya minta panduan cara mengetes state lewat Console. Di Lembar D, saya meminta struktur kode untuk fungsi simpan, muat, dan cara memasang tombol atur ulang di HTML. Di Lembar E, saya mencari cara mengetes simpanan yang rusak di Console dan meminta penjelasan kenapa data sampah "{}" masih nyangkut saat di-refresh (karena masalah cache). Terakhir, saya juga meminta bantuan untuk menjawab soal Tiket Keluar, panduan mengisi penilaian mandiri di F4.
+
+## Pertemuan 12 -  Build Tooling, npm, dan Framework SPA
+Node.js v24.22.0 dan npm 11.19.1
+## Catatan penggunaan AI
+Untuk membantu memahami konsep baru di Vue (seperti reactive, props, dan watch) serta membantu mencari solusi saat muncul error di terminal atau file .vue. Namun, struktur desain asli HTML/CSS dari P11 sepenuhnya buatan saya sendiri. Saya mengetik ulang seluruh kode, menyesuaikan komponen, dan melakukan uji coba secara mandiri hingga tahap npm run build dan npm run preview berhasil. Saya memahami seluruh isi kode proyek ini dan siap menjelaskannya.
